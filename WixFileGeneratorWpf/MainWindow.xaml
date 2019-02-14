@@ -1,0 +1,40 @@
+﻿<mah:MetroWindow  x:Class="WixFileGeneratorWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        Title="Wix File Reference Generator" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+
+        <!-- Source prefix -->
+        <Label Grid.Column="0" Grid.Row="0" Content="Source Prefix: " />
+        <TextBox Grid.Column="1" Grid.Row="0" x:Name="SourcePrefix" Text="$(var.Binaries_TargetDir)" Margin="5"/>
+
+        <!-- Files -->
+        <Label Grid.Column="0" Grid.Row="1" Content="Files: " />
+        <TextBox Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" x:Name="TextInput" Margin="5"/>
+
+        <!-- WIX output -->
+        <Label Grid.Column="0" Grid.Row="2" Content="Wix Output: " />
+        <TextBox Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" IsReadOnly="True" x:Name="TextOutput" Margin="5"/>
+
+        <!-- Start processsing button -->
+        <Button Grid.Column="1" Grid.Row="3" Content="Start" HorizontalAlignment="Right" Margin="5" Click="ButtonBase_OnClick"/>
+
+
+
+    </Grid>
+</mah:MetroWindow>
